@@ -1,0 +1,28 @@
+<div><%- include('../partials/header.ejs') %></div>
+<h2>Search Shops</h2>
+
+<form action="/shops" method="GET">
+    <div class="form-row">
+      <div class="form-item">
+        <label>Name</label>
+        <input type="text" name="ShopName" value="<%= searchOptions.ShopName %>">
+      </div>
+    </div>
+    <div class="form-row form-row-end">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+  </form>
+  <br>
+
+
+<% shops.forEach(shop => { %>
+    <div class="author-row">
+      <div class="author-name"><%= shop.ShopName %></div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/shops/<%= shop.id %>">View</a>
+        <a class="btn btn-primary" href="/shops/<%= shop.id %>/edit">Edit</a>
+        <%- include('../partials/deleteForm',
+                    { url: `/shops/${shop.id}` }) %>
+      </div>
+    </div>
+  <% }) %>

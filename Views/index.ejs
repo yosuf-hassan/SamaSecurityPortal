@@ -1,0 +1,87 @@
+<div><%- include('../Views/partials/header.ejs') %></div>
+<form action="/" method="GET">
+    <div class="form-row">
+      <div class="form-item">
+        <label>Area</label>
+      <select name= "Area">
+        <option value=""></option>
+        <option value="Al Nakheel">Al Nakheel</option>
+        <option value="Al Salehiya">Al Salehiya</option>
+        <option value="Dahan">Dahan</option>
+        <option value="AL Kharran">AL Kharran</option>
+        <option value="RAK st">RAK st</option>
+        <option value="Sidroh">Sidroh</option>
+        <option value="AL Qusaidt">AL Qusaidt</option>
+        <option value="Kuwaiti Shopping Street">Kuwaiti Shopping Street</option>
+        <option value="AL Huwaylat">AL Huwaylat</option>
+        <option value="Al Jazirah Al Hamra">Al Jazirah Al Hamra</option>
+        <option value="Dhayah">Dhayah</option>
+        <option value="Al Dhait South">Al Dhait South</option>
+        <option value="Suhaila">Suhaila</option>
+        <option value="Seih Al Burairat">Seih Al Burairat</option>
+        <option value="AL Mamourah">AL Mamourah</option>
+        <option value="AL Rams">AL Rams</option>
+        <option value="Alfulaya">Alfulaya</option>
+        <option value="Khuzam">Khuzam</option>
+        <option value="New RAK">New RAK</option>
+        <option value="AL Digdaga">AL Digdaga</option>
+        <option value="Al Hamraniyah">Al Hamraniyah</option>
+        <option value="AL Mairid">AL Mairid</option>
+        <option value="Julfar">Julfar</option>
+        <option value="Al Manaie">Manaie</option>
+        <option value="Al Dhait North">Al Dhait North</option>
+        <option value="Al Sabkha">Al Sabkha</option>
+        <option value="Wadi Kub">Wadi Kub</option>
+        <option value="Kadra">Kadra</option>
+        <option value="Shamal">Shamal</option>
+        <option value="Al Hudiabah">Al Hudiabah</option>
+        <option value="Business Centre">Business Centre</option>
+        <option value="Al Oraibi">Al Oraibi</option>
+        <option value="Sha'am">Sha'am</option>
+        <option value="Shawka">Shawka</option>
+        <option value="Al Nadeya">Al Nadeya</option>
+        <option value="Al Riffa">Al Riffa</option>
+        <option value="AL JULAN">AL JULAN</option>
+        <option value="Shabiya rashid">Shabiya rashid</option>
+        <option value="AL Ghayl">AL Ghayl</option>
+        <option value="Saqr bin mohammed rd">Saqr bin mohammed rd</option>
+        <option value="Al Juwais">Al Juwais</option>
+        <option value="AL Qawasim Corniche">AL Qawasim Corniche</option>
+        <option value="Masafi">Masafi</option>
+        <option value="Flamingo Beach">Flamingo Beach</option>
+        <option value="AL Ghubb">AL Ghubb</option>
+        <option value="Adhen Village">Adhen Village</option>
+        <option value="Rafaq">Rafaq</option>
+        <option value="Al jeer">Al jeer</option>
+        <option value="Al Hayl">Al Hayl</option>
+      </select>
+      </div>
+    </div>
+    <div class="form-row form-row-end">
+
+      <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-item">
+          <label>Expires Before</label>
+          <input type="date" name="expiredBefore" value="<%= searchOptions.expiredBefore  %>">
+        </div>
+
+        <div class="form-item">
+            <label>Expires After</label>
+            <input type="date" name="expiredAfter" value="<%= searchOptions.expiredAfter  %>">
+          </div>
+      </div>
+    
+  </form>
+  <br>
+
+
+<% shops.forEach(shop => { %>
+    <div class="author-row">
+      <div class="author-name"><%= shop.ShopName %></div>
+      <div class="btn-row">
+      </div>
+    </div>
+  <% }) %>

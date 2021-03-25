@@ -1,0 +1,9 @@
+<div><%- include('../partials/header.ejs') %></div>
+<h2>New Shop</h2>
+<form action="/shops" method="POST">
+  <%- include('_form_fields') %>
+  <div>
+    <a class="btn btn-danger" href="/shops">Cancel</a>
+    <button class="btn btn-primary" type="submit">Create</button>
+  </div>
+</form>

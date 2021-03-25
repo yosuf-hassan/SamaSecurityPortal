@@ -1,0 +1,29 @@
+<div><%- include('../partials/header.ejs') %></div>
+<div class="book-details-grid">
+  <div class="book-details-label">Shop Name:</div>
+  <h2 class="page-header"><%= shop.ShopName %></h2>
+  <div class="book-details-label">GRA Number:</div>
+  <h2><%= shop.GRANumber %></h2>
+  <div class="book-details-label">Liscense Number:</div>
+  <h2><%= shop.LiscenseNumber %></h2>
+  <div class="book-details-label">Renewal Date:</div>
+  <h2><%= shop.RenewalDate.toDateString() %></h2>
+  <div class="book-details-label">ExpiryDate:</div>
+  <h2><%= shop.ExpiryDate.toDateString() %></h2>
+  <div class="book-details-label">Area:</div>
+  <h2><%= shop.Area %></h2>
+  <div class="book-details-label">Contact Number:</div>
+  <h2><%= shop.ContactNumber %></h2>
+  <div class="book-details-label">GPS Coordinates:</div>
+  <h2><%= shop.Coordination %></h2>
+  <div class="book-details-label">Certificate Validity:</div>
+  <h2><%= shop.CertificateValidity %></h2>
+  <div class="book-details-label">Note:</div>
+  <h2><%= shop.Note %></h2>
+
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/shops/<%= shop.id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm',
+                { url: `/shops/${shop.id}` }) %>
+  </div>
+</div>
