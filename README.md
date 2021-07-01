@@ -1,4 +1,4 @@
-# J_Management_System
+# Sama Security Portal
  A system to be used by Al Sama Alarm and Conrol Company to ease their operations and manage their clients
  
  # Install and run 
