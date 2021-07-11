@@ -1,0 +1,54 @@
+<div>
+    <%- include('../partials/header.ejs') %>
+</div>
+
+<button id='clicker' onclick="formgenrator()">Gen</button>
+<br><br>
+
+<form id='invoiceform' action="/invoices" method="POST">
+    <button type="submit">Generate</button>
+</form>
+
+<script>
+    var counter = 0;
+    function formgenrator() {
+        counter++;
+        var form = document.getElementById('invoiceform');
+        var button = document.getElementById('clicker');
+
+        var br = document.createElement('br');
+
+        var productname = document.createElement("input");
+        productname.id = 'productname' + counter;
+        productname.type = 'text';
+        productname.name = 'description' + counter;
+        productname.placeholder = 'Product Name'
+
+        var quantity = document.createElement("input");
+        quantity.id = 'productquantity' + counter;
+        quantity.type = 'number';
+        quantity.name = 'quantity' + counter;
+        quantity.placeholder = 'Product Quantity';
+
+        var price = document.createElement("input");
+        price.id = 'price' + counter;
+        price.type = 'number';
+        price.name = 'price' + counter;
+        price.placeholder = 'Product Price';
+
+        form.appendChild(productname);
+
+        form.appendChild(br);
+
+        form.appendChild(quantity);
+
+        form.appendChild(br);
+
+        form.appendChild(price);
+
+        form.appendChild(br);
+    }
+
+
+
+</script>

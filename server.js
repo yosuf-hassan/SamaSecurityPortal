@@ -19,6 +19,7 @@ require('./config/passport')(passport);
 const indexrouter = require("./routes/index");
 const shoprouter = require("./routes/shops");
 const homerouter = require("./routes/users");
+const invoicerouter = require("./routes/invoices");
 
 // Database connection Mongoose
 
@@ -76,7 +77,7 @@ app.use(function(req, res, next) {
 app.use("/", indexrouter);
 app.use("/shops", shoprouter);
 app.use("/users", homerouter);
-
+app.use("/invoices",invoicerouter);
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, console.log(`Server Started on port ${PORT}`));
